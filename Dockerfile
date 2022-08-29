@@ -8,7 +8,7 @@ COPY ./pom.xml ./pom.xml
 
 # build all dependencies for offline use
 
-RUN mvn dependency:go-offline -B
+# RUN mvn dependency:go-offline -B
 
 # copy your other files
 
@@ -29,11 +29,11 @@ EXPOSE 8080
 
 #ARG JAR_FILE=target/*.jar
 
-#COPY ${JAR_FILE} app.jar
+COPY /target/*.jar app.jar
 
-#ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
 
-ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
+# ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
 
 
 # CMD ["sh", "target/bin/start"]
