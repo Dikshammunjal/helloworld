@@ -4,7 +4,7 @@ WORKDIR .
 
 # copy the project files
 
-COPY ./pom.xml ./pom.xml
+#COPY ./pom.xml ./pom.xml
 
 # build all dependencies for offline use
 
@@ -12,13 +12,13 @@ COPY ./pom.xml ./pom.xml
 
 # copy your other files
 
-COPY ./src ./src
+#COPY ./src ./src
 
 
 # build for release
 #RUN mvn package
 
-RUN mvn package -DskipTests
+#RUN mvn package -DskipTests
 
 #RUN mvn clean 
 
@@ -28,13 +28,15 @@ RUN mvn package -DskipTests
 
 #ARG JAR_FILE=target/*.jar
 
+RUN pwd
+
 RUN ls -ltr 
 
 RUN ls -ltr target/
 
-RUN ls -ltr /target/
+ADD ./target/*.jar /app.jar
 
-COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
+#COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
 RUN ls -ltr 
 
@@ -56,3 +58,6 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 #RUN chmod a+x /run.sh
 #EXPOSE 8080:8080
 #CMD /run.sh
+
+
+
