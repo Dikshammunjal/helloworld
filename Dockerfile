@@ -33,7 +33,7 @@ EXPOSE 8080
 
 #ENTRYPOINT ["java","-jar","/app.jar"]
 
-ENTRYPOINT ["java","-jar","/target/spring-boot-docker-initial-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
 
 
 # CMD ["sh", "target/bin/start"]
