@@ -36,8 +36,9 @@ pipeline {
                       ])
                     
                     
-                        sh ("pwd")
-                    sh ("ls -ltr")
+                   sh ("pwd")
+                   sh ("ls -ltr")
+                   sh ("sleep 10000")
                    sh "docker build -f Dockerfile -t ${params.MIRCROSERVICE_NAME}:${scmVars.GIT_COMMIT} ." 
 
 
