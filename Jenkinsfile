@@ -13,7 +13,6 @@ pipeline {
                     sh ("pwd")
                     sh ("ls -ltr")
                   sh("mvn clean package -DskipTests")
-                sh ("cp /u01/shared/var/jenkins_home/jobs/test1/workspace/target/*.jar /home/jenkins/workspace/test1/")
                     
                 
 
