@@ -39,8 +39,7 @@ pipeline {
                         sh ("pwd")
                     sh ("ls -ltr")
                    sh "docker build -f Dockerfile -t ${params.MIRCROSERVICE_NAME}:${scmVars.GIT_COMMIT} ." 
-                   sh ("ls -ltr")
-                   sh ("ls -ltr target/")
+
 
 
                     
