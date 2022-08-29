@@ -13,6 +13,7 @@ pipeline {
             }
             }
             steps {
+                sh "whoami"
                 sh "pwd"
 
                     sh ("pwd")
