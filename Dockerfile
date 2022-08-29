@@ -16,9 +16,9 @@ COPY ./src ./src
 
 
 # build for release
+RUN mvn package
 
-
-RUN mvn package -DskipTests
+#RUN mvn package -DskipTests
 
 #RUN mvn clean 
 
