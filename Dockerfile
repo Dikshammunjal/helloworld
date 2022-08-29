@@ -19,7 +19,7 @@ COPY ./src ./src
 
 #RUN mvn package -DskipTests
 
-RUN mvn clean assembly:assembly
+RUN mvn clean 
 
 EXPOSE 8080
 
