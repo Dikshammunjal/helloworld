@@ -30,6 +30,10 @@ RUN mvn package -DskipTests
 
 RUN ls -ltr 
 
+RUN ls -ltr target/
+
+RUN ls -ltr /target/
+
 COPY target/*.jar app.jar
 
 RUN ls -ltr 
