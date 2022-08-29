@@ -32,11 +32,9 @@ RUN pwd
 
 RUN ls -ltr 
 
-RUN cd /u01/shared/
+#ADD myproject-0.0.1-SNAPSHOT.jar /app.jar
 
-ADD myproject-0.0.1-SNAPSHOT.jar /app.jar
-
-#COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
+COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
 #RUN ls -ltr 
 
