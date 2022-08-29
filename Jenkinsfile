@@ -13,7 +13,7 @@ pipeline {
                     sh ("pwd")
                     sh ("ls -ltr")
                     sh("mvn clean package -DskipTests")
-                 
+                script{
                    def scmVars = checkout([
                         $class: 'GitSCM',
                         doGenerateSubmoduleConfigurations: false,
@@ -27,7 +27,7 @@ pipeline {
                    sh ("pwd")
                    sh ("ls -ltr")
                    sh "docker build -f Dockerfile -t ${params.MIRCROSERVICE_NAME}:${scmVars.GIT_COMMIT} ." 
- 
+                }
                 
 
             }
