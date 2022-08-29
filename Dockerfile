@@ -17,9 +17,9 @@ COPY ./src ./src
 
 # build for release
 
-#RUN mvn package -DskipTests
+RUN mvn package -DskipTests
 
-RUN mvn clean 
+#RUN mvn clean 
 
 EXPOSE 8080
 
