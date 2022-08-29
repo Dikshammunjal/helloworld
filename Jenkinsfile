@@ -12,21 +12,9 @@ pipeline {
 
                     sh ("pwd")
                     sh ("ls -ltr")
-                  sh("mvn clean package -DskipTests")
-                    
-                
-
-            }
-        }
-        stage('Create docker image') {
-            agent {
-            node {
-            label 'agent-label'
-            }
-            }
-            steps {
-                script {
-                    def scmVars = checkout([
+                    sh("mvn clean package -DskipTests")
+                 
+                   def scmVars = checkout([
                         $class: 'GitSCM',
                         doGenerateSubmoduleConfigurations: false,
                         userRemoteConfigs: [[
@@ -39,7 +27,20 @@ pipeline {
                    sh ("pwd")
                    sh ("ls -ltr")
                    sh "docker build -f Dockerfile -t ${params.MIRCROSERVICE_NAME}:${scmVars.GIT_COMMIT} ." 
+ 
+                
 
+            }
+        }
+        stage('Create docker image') {
+            agent {
+            node {
+            label 'agent-label'
+            }
+            }
+            steps {
+                script {
+                    
 
 
                     
