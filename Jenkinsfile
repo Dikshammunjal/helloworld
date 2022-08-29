@@ -12,7 +12,7 @@ pipeline {
 
                     sh ("pwd")
                     sh ("ls -ltr")
-                    sh "mvn package"
+                    
                 
 
             }
