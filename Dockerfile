@@ -34,7 +34,7 @@ RUN ls -ltr
 
 RUN ls -ltr target/
 
-ADD ./target/*.jar /app.jar
+COPY /u01/shared/var/jenkins_home/jobs/test1/workspace/target/*.jar /app.jar
 
 #COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
