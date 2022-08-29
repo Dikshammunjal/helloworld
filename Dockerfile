@@ -32,7 +32,7 @@ RUN pwd
 
 RUN ls -ltr 
 
-ADD ./target/myproject-0.0.1-SNAPSHOT.jar /app.jar
+ADD ./target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
 #COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
