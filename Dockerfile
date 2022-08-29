@@ -1,6 +1,6 @@
 FROM maven:3.5-jdk-8
 
-WORKDIR /u01/shared/var/jenkins_home/jobs/test1/workspace/
+WORKDIR .
 
 # copy the project files
 
@@ -32,9 +32,7 @@ RUN pwd
 
 RUN ls -ltr 
 
-RUN chmod -R 777 /u01/shared/var/jenkins_home/jobs/test1/workspace/target
-
-COPY target/myproject-0.0.1-SNAPSHOT.jar /app.jar
+ADD /u01/shared/var/jenkins_home/jobs/test1/workspace/target/myproject-0.0.1-SNAPSHOT.jar /app.jar
 
 
 #COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
