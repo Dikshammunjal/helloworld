@@ -6,20 +6,14 @@ pipeline {
     }
     stages {
         
-        stage('Build') { 
+        stage('Build and Dockerize') { 
             agent {
             node {
             label 'agent-label'
             }
             }
             steps {
-                sh "whoami"
-                sh ("ls -ltr /home")
-                sh "pwd"
-
-                    sh ("pwd")
-                    sh ("ls -ltr")
-                     
+                
                     sh("mvn clean package -DskipTests")
                     sh ("cp target/*.jar /u01/shared/")
                 script{
