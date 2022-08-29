@@ -22,16 +22,22 @@ RUN mvn package -DskipTests
 
 #RUN mvn clean 
 
-EXPOSE 8080
 
 
 # set the startup command to run your binary
 
 #ARG JAR_FILE=target/*.jar
 
-COPY /target/*.jar app.jar
+RUN ls -ltr 
+
+COPY target/*.jar app.jar
+
+RUN ls -ltr 
+
+EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","/app.jar"]
+
 
 # ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
 
