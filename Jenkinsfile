@@ -14,6 +14,7 @@ pipeline {
             }
             steps {
                 sh "whoami"
+                sh ("ls -ltr /home")
                 sh "pwd"
 
                     sh ("pwd")
