@@ -7,6 +7,11 @@ pipeline {
     stages {
         
         stage('Build') { 
+            agent {
+            node {
+            label 'agent-label'
+            }
+            }
             steps {
                 sh "pwd"
 
