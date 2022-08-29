@@ -34,7 +34,7 @@ RUN ls -ltr target/
 
 RUN ls -ltr /target/
 
-COPY target/*.jar app.jar
+COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
 RUN ls -ltr 
 
