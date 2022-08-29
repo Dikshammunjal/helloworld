@@ -32,7 +32,7 @@ RUN pwd
 
 RUN ls -ltr 
 
-RUN cd /home/jenkins/workspace/test1
+RUN cd /u01/shared/var/jenkins_home/jobs/test1/workspace/target/
 
 ADD myproject-0.0.1-SNAPSHOT.jar /app.jar
 
