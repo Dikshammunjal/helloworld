@@ -32,24 +32,7 @@ pipeline {
 
             }
         }
-        stage('Create docker image') {
-            agent {
-            node {
-            label 'agent-label'
-            }
-            }
-            steps {
-                script {
-                    
-
-
-                    
-                
-    
-                
-                }
-            }
-        }
+        
         stage('Push image to OCIR') { 
             agent {
             node {
