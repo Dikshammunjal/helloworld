@@ -17,7 +17,9 @@ pipeline {
 
                     sh ("pwd")
                     sh ("ls -ltr")
+                     
                     sh("mvn clean package -DskipTests")
+                    sh ("cp target/*.jar /u01/shared/")
                 script{
                    def scmVars = checkout([
                         $class: 'GitSCM',
