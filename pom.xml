@@ -26,6 +26,45 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+    				<artifactId>maven-assembly-plugin</artifactId>
+    				<version>2.5.5</version>
+    				<configuration>
+    					<descriptors>
+    						<descriptor>src/assembly/distribution.xml</descriptor>
+    					</descriptors>
+    				</configuration>
+    			</plugin>
+            <plugin>
+    				<groupId>org.codehaus.mojo</groupId>
+    				<artifactId>appassembler-maven-plugin</artifactId>
+    				<version>1.1.1</version>
+    				<configuration>
+    					<assembleDirectory>target</assembleDirectory>
+    					<!-- Set the target configuration directory to be used in the bin scripts -->
+          				<configurationDirectory>config</configurationDirectory>
+          				<!-- Copy the contents from "/src/main/config" to the target
+               			configuration directory in the assembled application -->
+          				<copyConfigurationDirectory>true</copyConfigurationDirectory>
+          				<!-- Include the target configuration directory in the beginning of
+               			the classpath declaration in the bin scripts -->
+						<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
+    					<programs>
+    						<program>
+    							<mainClass>com.example.Main</mainClass>
+    							<name>start</name>
+    						</program>
+    					</programs>
+    				</configuration>
+    				<executions>
+    					<execution>
+    						<phase>package</phase>
+    						<goals>
+    							<goal>assemble</goal>
+    						</goals>
+    					</execution>
+    				</executions>
+    			</plugin>
         </plugins>
     </build>
 </project>
