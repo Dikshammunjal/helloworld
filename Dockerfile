@@ -4,7 +4,7 @@ WORKDIR .
 
 # copy the project files
 
-#COPY ./pom.xml ./pom.xml
+COPY ./pom.xml ./pom.xml
 
 # build all dependencies for offline use
 
@@ -12,13 +12,13 @@ WORKDIR .
 
 # copy your other files
 
-#COPY ./src ./src
+COPY ./src ./src
 
 
 # build for release
 #RUN mvn package
 
-#RUN mvn package -DskipTests
+RUN mvn package -DskipTests
 
 #RUN mvn clean 
 
@@ -28,23 +28,23 @@ WORKDIR .
 
 #ARG JAR_FILE=target/*.jar
 
-RUN pwd
+#RUN pwd
 
-RUN ls -ltr 
+#RUN ls -ltr 
 
-ADD /u01/shared/var/jenkins_home/jobs/test1/workspace/target/myproject-0.0.1-SNAPSHOT.jar /app.jar
+#ADD /u01/shared/var/jenkins_home/jobs/test1/workspace/target/myproject-0.0.1-SNAPSHOT.jar /app.jar
 
 
 #COPY target/myproject-0.0.1-SNAPSHOT.jar app.jar
 
-RUN ls -ltr 
+#RUN ls -ltr 
 
-EXPOSE 8080
+ EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+#ENTRYPOINT ["java","-jar","/app.jar"]
 
 
-# ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
+ ENTRYPOINT ["java","-jar","/target/myproject-0.0.1-SNAPSHOT.jar"]
 
 
 # CMD ["sh", "target/bin/start"]
